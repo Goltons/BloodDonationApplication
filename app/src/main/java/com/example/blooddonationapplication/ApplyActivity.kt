@@ -69,7 +69,12 @@ class ApplyActivity : AppCompatActivity() {
                         val intent=Intent(this,ApplymentHistoryActivity::class.java )
                         startActivity(intent)
                     }
+                    else{
                         collectionRef.document(id).collection("donors").add(donor)
+                        val intent=Intent(this,ApplymentHistoryActivity::class.java )
+                        startActivity(intent)
+                    }
+
                 }
                 }
         }
