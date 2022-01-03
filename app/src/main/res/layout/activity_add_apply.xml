@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="15dp"
+    tools:context=".AddApplyActivity">
+
+    <EditText
+        android:id="@+id/editText_hospitalName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Hastane İsmi"
+        android:paddingTop="15dp"
+        android:inputType="text"/>
+
+    <NumberPicker
+        android:id="@+id/numberPicker_bloodGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:textAlignment="center"
+        android:layout_gravity="center"
+        android:hint="Kan Grubu"
+        android:inputType="text"
+        android:paddingTop="15dp" />
+    <EditText
+        android:id="@+id/editText_description"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Açıklama"
+        android:paddingTop="15dp"
+        android:inputType="text"/>
+    <EditText
+        android:id="@+id/editText_patientName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        android:hint="Hasta İsmi"
+        />
+    <EditText
+        android:id="@+id/editText_PatientIdNo"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Hasta TC Kimlik No"
+        android:inputType="number"
+        android:paddingTop="15dp"
+        android:maxLength="11"/>
+    <EditText
+        android:id="@+id/editText_count"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Kan Tüp Miktarı"
+        android:paddingTop="15dp"
+        android:inputType="number"
+        />
+    <EditText
+        android:id="@+id/editText_location"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Konum"
+        android:paddingTop="15dp"
+        android:inputType="text"/>
+    <Button
+        android:id="@+id/btnApply"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Başvuruyu Oluştur"
+        android:paddingTop="15dp"
+
+        android:textAlignment="center"/>
+
+</LinearLayout>

@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RegisterActivity"
+    tools:layout_editor_absoluteX="-14dp"
+    tools:layout_editor_absoluteY="28dp">
+
+    <EditText
+        android:id="@+id/email"
+        android:layout_width="270dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="39dp"
+        android:ems="10"
+        android:hint="Mail Adresini Giriniz"
+        android:inputType="textEmailAddress"
+        app:layout_constraintBottom_toTopOf="@+id/btnSave"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.686"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/birthDate" />
+
+    <EditText
+        android:id="@+id/birthDate"
+        android:layout_width="270dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="34dp"
+        android:ems="10"
+        android:hint="Doğum Tarihi"
+        android:inputType="text"
+        android:minHeight="48dp"
+        app:layout_constraintBottom_toTopOf="@+id/email"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.593"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/apartmentNumber" />
+
+    <EditText
+        android:id="@+id/phoneNumber"
+        android:layout_width="135dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="40dp"
+        android:ems="10"
+        android:hint="Telefon"
+        android:inputType="phone"
+        app:layout_constraintBottom_toTopOf="@+id/birthDate"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/apartmentNumber"
+        app:layout_constraintTop_toBottomOf="@+id/buildingNumber"
+        android:maxLength="11"/>
+
+    <EditText
+        android:id="@+id/buildingNumber"
+        android:layout_width="135dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="40dp"
+        android:ems="10"
+        android:hint="Bina No"
+        android:inputType="number"
+        app:layout_constraintBottom_toTopOf="@+id/phoneNumber"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/street"
+        app:layout_constraintTop_toBottomOf="@+id/quarter" />
+
+    <EditText
+        android:id="@+id/quarter"
+        android:layout_width="135dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="40dp"
+        android:ems="10"
+        android:hint="Mahalle"
+        android:inputType="text"
+        app:layout_constraintBottom_toTopOf="@+id/buildingNumber"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/district"
+        app:layout_constraintTop_toBottomOf="@+id/city" />
+
+    <EditText
+        android:id="@+id/city"
+        android:layout_width="135dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="40dp"
+        android:ems="10"
+        android:hint="Şehir"
+        android:inputType="text"
+        app:layout_constraintBottom_toTopOf="@+id/quarter"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/bloodGroup"
+        app:layout_constraintTop_toBottomOf="@+id/identificationNumber" />
+
+    <EditText
+        android:id="@+id/identificationNumber"
+        android:layout_width="135dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="40dp"
+        android:ems="10"
+        android:hint="Kimlik No"
+        android:inputType="numberDecimal"
+        app:layout_constraintBottom_toTopOf="@+id/city"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/password"
+        app:layout_constraintTop_toBottomOf="@+id/lastName"
+        android:maxLength="11"/>
+
+    <EditText
+        android:id="@+id/password"
+        android:layout_width="135dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="20dp"
+        android:ems="10"
+        android:hint="Şifre"
+        android:inputType="text"
+        app:layout_constraintBottom_toTopOf="@+id/bloodGroup"
+        app:layout_constraintEnd_toStartOf="@+id/identificationNumber"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/identificationNumber"
+        app:layout_constraintVertical_bias="0.0"
+        android:maxLength="8"/>
+
+    <EditText
+        android:id="@+id/street"
+        android:layout_width="135dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="20dp"
+        android:ems="10"
+        android:hint="Sokak"
+        android:inputType="text"
+        app:layout_constraintBottom_toTopOf="@+id/apartmentNumber"
+        app:layout_constraintEnd_toStartOf="@+id/buildingNumber"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/district" />
+
+    <EditText
+        android:id="@+id/bloodGroup"
+        android:layout_width="135dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="20dp"
+        android:ems="10"
+        android:hint="Kan Grubu"
+        android:inputType="text"
+        app:layout_constraintBottom_toTopOf="@+id/district"
+        app:layout_constraintEnd_toStartOf="@+id/city"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/city"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <EditText
+        android:id="@+id/district"
+        android:layout_width="135dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="20dp"
+        android:ems="10"
+        android:hint="İlçe"
+        android:inputType="text"
+        app:layout_constraintBottom_toTopOf="@+id/street"
+        app:layout_constraintEnd_toStartOf="@+id/quarter"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/quarter" />
+
+    <EditText
+        android:id="@+id/apartmentNumber"
+        android:layout_width="135dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="20dp"
+        android:ems="10"
+        android:hint="Daire No"
+        android:inputType="number"
+        app:layout_constraintBottom_toTopOf="@+id/birthDate"
+        app:layout_constraintEnd_toStartOf="@+id/phoneNumber"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/street" />
+
+    <EditText
+        android:id="@+id/firstName"
+        android:layout_width="135dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="20dp"
+        android:ems="10"
+        android:hint="Ad"
+        android:inputType="text"
+        app:layout_constraintBottom_toTopOf="@+id/password"
+        app:layout_constraintEnd_toStartOf="@+id/lastName"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/lastName"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <EditText
+        android:id="@+id/lastName"
+        android:layout_width="135dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="40dp"
+        android:ems="10"
+        android:hint="Soyad"
+        android:inputType="text"
+        app:layout_constraintBottom_toTopOf="@+id/identificationNumber"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/firstName"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnSave"
+        android:layout_width="269dp"
+        android:layout_height="77dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="200dp"
+        android:onClick="btnSave"
+        android:text="Kaydı Tamamla"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/email" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/group"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

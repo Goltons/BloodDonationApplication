@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginEnd="8dp"
+    android:layout_marginStart="8dp"
+    android:layout_marginTop="8dp"
+    app:cardBackgroundColor="#FFFFFF">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="10dp">
+    <TextView
+        android:id="@+id/text_view_hospitalNameHistory"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_toStartOf="@id/text_view_bloodGroupHistory"
+        android:ellipsize="end"
+        android:maxLines="2"
+        android:text="Hastane İsmi"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+        <TextView
+            android:id="@+id/textView_countHistory"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/text_view_bloodGroupHistory"
+            android:layout_alignParentEnd="true"
+            android:paddingRight="10dp"
+            android:text="adet" />
+
+        <TextView
+            android:id="@+id/text_view_descriptionHistory"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/text_view_hospitalNameHistory"
+            android:layout_alignParentStart="true"
+            android:text="Açıklama" />
+
+        <TextView
+            android:id="@+id/text_view_bloodGroupHistory"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:text="KanGrubu"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+        <TextView
+            android:id="@+id/text_view_dateHistory"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/text_view_descriptionHistory"
+            android:layout_alignParentStart="true"
+            android:text="Konum"
+            />
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>
