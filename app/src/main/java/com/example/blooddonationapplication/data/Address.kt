@@ -10,5 +10,7 @@ data class Address(
     var street:String?,
     var buildingNumber:Int?,
     var apartmentNumber:Int?,
-    var userIdNp: Long=0L
-):BaseDataClass()
+    var userIdNp: Long?
+):BaseDataClass() {
+    constructor() : this(null,null,null,null,null,null,null,null)
+}

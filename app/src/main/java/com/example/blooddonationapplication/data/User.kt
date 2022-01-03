@@ -4,7 +4,7 @@ import javax.annotation.Nullable
 
 @Nullable
 //@Entity(tableName = "users")
-data class User (
+data class User(
     //@PrimaryKey(autoGenerate = true)
     var userId:Int?=null,
     var userFirstName:String?,
@@ -15,7 +15,10 @@ data class User (
     var birthDate: String?,
     var address:Address?,
     var communication:Communication?,
-    var diseaseInformation:ArrayList<DiseaseInformation>,
-    var bloodDonations:ArrayList<BloodDonations>
-    ):BaseDataClass()
+    var diseaseInformation: ArrayList<DiseaseInformation>?,
+    var bloodDonations: ArrayList<BloodDonations>?
+    ):BaseDataClass() {
+    constructor() : this(null,null,null,null,null,null,null
+    ,null,null,null,null) {}
+}
 

@@ -10,7 +10,7 @@ class RecycleViewAdapter(val itemList:ArrayList<BloodDonationApplyment>):Recycle
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): itemListViewHolder {
         return  itemListViewHolder(
             LayoutInflater.from(parent.context).inflate(
-                R.layout.itemlist,
+                R.layout.applymentlist,
                 parent,
                 false
             )

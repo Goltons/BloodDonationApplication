@@ -49,6 +49,11 @@ class UserService :IUserService{
         if(user.identificationNumber!! %2==0L
             ||user.identificationNumber.toString().length==11
             ||!user.identificationNumber.toString().startsWith("0")
+                    ||user.userFirstName!=null||user.userLastName!=null
+            ||user.userPassword!=null
+                    ||user.userPassword.toString().length<5
+                    ||user.bloodGroup!=null||user.address?.city!=null
+            ||user.address?.district!=null
         ) return  true
         return false
 

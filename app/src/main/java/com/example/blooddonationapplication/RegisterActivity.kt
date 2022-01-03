@@ -5,18 +5,49 @@ import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.blooddonationapplication.DataAccess.UserService
-import com.example.blooddonationapplication.data.*
+import com.example.blooddonationapplication.data.Address
+import com.example.blooddonationapplication.data.Communication
+import com.example.blooddonationapplication.data.User
 import com.google.firebase.firestore.CollectionReference
 import com.google.firebase.firestore.FirebaseFirestore
-import kotlinx.android.synthetic.main.activity_register.*
 
 class RegisterActivity : AppCompatActivity() {
+    private lateinit var firstName: EditText
+    private lateinit var lastName: EditText
+    private lateinit var password: EditText
+    private lateinit var identificationNumber: EditText
+    private lateinit var bloodGroup: EditText
+    private lateinit var city: EditText
+    private lateinit var district: EditText
+    private lateinit var quarter: EditText
+    private lateinit var street: EditText
+    private lateinit var buildingNumber: EditText
+    private lateinit var apartmentNumber: EditText
+    private lateinit var phoneNumber: EditText
+    private lateinit var birthDate: EditText
+    private lateinit var email: EditText
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register)
+        firstName=findViewById(R.id.firstName)
+        lastName=findViewById(R.id.lastName)
+        password=findViewById(R.id.password)
+        identificationNumber=findViewById(R.id.identificationNumber)
+        bloodGroup=findViewById(R.id.bloodGroup)
+        city=findViewById(R.id.city)
+        district=findViewById(R.id.district)
+        quarter=findViewById(R.id.quarter)
+        street=findViewById(R.id.street)
+        buildingNumber=findViewById(R.id.buildingNumber)
+        apartmentNumber=findViewById(R.id.apartmentNumber)
+        phoneNumber=findViewById(R.id.phoneNumber)
+        birthDate=findViewById(R.id.birthDate)
+        email=findViewById(R.id.email)
 
     }
     val db= FirebaseFirestore.getInstance()
@@ -24,32 +55,35 @@ class RegisterActivity : AppCompatActivity() {
     @Throws(IllegalArgumentException::class)
      fun btnSave(view: View){
         val userService= UserService()
-        val firstName=firstName.text.trim().toString()
-        val lastName =lastName.text.trim().toString()
-        val password=password.text.trim().toString()
-        val IdentificationNumber=identificationNumber.text.toString().toLong()
-        val bloodGroup=bloodGroup.text.trim().toString()
-        val city= city.text.trim().toString()
-        val district=district.text.trim().toString()
-        val quarter=quarter.text.trim().toString()
-        val street=street.text.trim().toString()
-        val buildingNumber=buildingNumber.text.toString().toInt()
-        val apartmentNumber=apartmentNumber.text.toString().toInt()
-        val phoneNumber=phoneNumber.text.toString().toLong()
-        val birthDate=birthDate.text.toString()
-        val email=email.text.trim().toString()
-
+        val user=User()
+        val address=Address()
+        val communication=Communication()
+        user.userFirstName=firstName.text.trim().toString()
+        user.userLastName =lastName.text.trim().toString()
+        user.userPassword=password.text.trim().toString()
+        user.identificationNumber=identificationNumber.text.toString().toLong()
+        user.bloodGroup=bloodGroup.text.trim().toString()
+        address.city= city.text.trim().toString()
+        address.district=district.text.trim().toString()
+        address.quarter=quarter.text.trim().toString()
+        address.street=street.text.trim().toString()
+        address.buildingNumber=buildingNumber.text.toString().toInt()
+        address.apartmentNumber=apartmentNumber.text.toString().toInt()
+        communication.phoneNumber=phoneNumber.text.toString().toLong()
+        user.birthDate=birthDate.text.toString()
+        communication.email=email.text.trim().toString()
+/*
         val address=Address(0,city,district,quarter,street,buildingNumber,apartmentNumber
             ,IdentificationNumber)
         val communication=Communication(0,email,phoneNumber,IdentificationNumber)
         val bloodDonations= ArrayList<BloodDonations>()
         val diseaseInformation=ArrayList<DiseaseInformation>()
         val user=User(0,firstName,lastName,password, IdentificationNumber,
-            bloodGroup,birthDate,address, communication, diseaseInformation, bloodDonations)
+            bloodGroup,birthDate,address, communication, diseaseInformation, bloodDonations)*/
 //validate methodu çağıralacak
 if(userService.validate(user)){
         userDocRef
-            .whereEqualTo("identificationNumber", IdentificationNumber)
+            .whereEqualTo("identificationNumber", user.identificationNumber)
             .get().addOnSuccessListener { task->
                 if (task.isEmpty){
                     userDocRef.add(user)

@@ -23,7 +23,7 @@ class ApplyAdapter (options: FirestoreRecyclerOptions<BloodDonationApplyment>) :
         parent: ViewGroup,
         viewType: Int
     ): ApplyAdapter.BloodDonationAppleymentHolder {
-        val view:View = LayoutInflater.from(parent.context).inflate(R.layout.itemlist,parent,false)
+        val view:View = LayoutInflater.from(parent.context).inflate(R.layout.applymentlist,parent,false)
         return BloodDonationAppleymentHolder(view)
     }
 

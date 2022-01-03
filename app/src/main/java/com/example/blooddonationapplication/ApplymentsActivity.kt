@@ -30,7 +30,7 @@ class ApplymentsActivity : AppCompatActivity()  {
     }
     private fun setRecyclerView() {
         val bloodGroup=getSharedPreferences("sharedPrefs", MODE_PRIVATE).getString("bloodGroup","")
-        val query=collectionRef.whereEqualTo("bloodGroup","0RH-").whereGreaterThan("countOfNeeds",1)
+        val query=collectionRef.whereEqualTo("bloodGroup",bloodGroup).whereGreaterThan("countOfNeeds",1)
             .whereEqualTo("complete",false)
         val options:FirestoreRecyclerOptions<BloodDonationApplyment> = FirestoreRecyclerOptions.Builder<BloodDonationApplyment>()
             .setQuery(query,BloodDonationApplyment::class.java).build()
