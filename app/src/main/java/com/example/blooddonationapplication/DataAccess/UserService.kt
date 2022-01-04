@@ -45,17 +45,21 @@ class UserService :IUserService{
             return "fail"
 
     }
-    override fun validate(user: User): Boolean {
-        if(user.identificationNumber!! %2==0L
-            ||user.identificationNumber.toString().length==11
-            ||!user.identificationNumber.toString().startsWith("0")
-                    ||user.userFirstName!=null||user.userLastName!=null
-            ||user.userPassword!=null
-                    ||user.userPassword.toString().length<5
-                    ||user.bloodGroup!=null||user.address?.city!=null
-            ||user.address?.district!=null
-        ) return  true
-        return false
+     override fun validate(user: User): Boolean {
+        if( user.identificationNumber==null||user.identificationNumber==0L
+            ||user.identificationNumber!! %2!=0L
+            ||user.identificationNumber.toString().length!=11
+            ||user.identificationNumber.toString().startsWith("0")
+            ||user.userFirstName==null||user.userLastName==null
+            ||user.userPassword===null
+            ||user.userPassword.toString().length>5
+            ||user.bloodGroup==null||user.address?.city==null
+            ||user.address?.district==null||user.address?.apartmentNumber==null
+            ||user.address?.buildingNumber==null||user.address?.street==null
+            ||user.address?.quarter==null|| user.communication!!.email==null
+            || user.communication!!.phoneNumber==null||user.birthDate==null
+        ) return  false
+        return true
 
     }
 

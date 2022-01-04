@@ -9,9 +9,7 @@ import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.blooddonationapplication.DataAccess.UserService
-import com.example.blooddonationapplication.data.Address
-import com.example.blooddonationapplication.data.Communication
-import com.example.blooddonationapplication.data.User
+import com.example.blooddonationapplication.data.*
 import com.google.firebase.firestore.CollectionReference
 import com.google.firebase.firestore.FirebaseFirestore
 
@@ -61,17 +59,27 @@ class RegisterActivity : AppCompatActivity() {
         user.userFirstName=firstName.text.trim().toString()
         user.userLastName =lastName.text.trim().toString()
         user.userPassword=password.text.trim().toString()
-        user.identificationNumber=identificationNumber.text.toString().toLong()
+        user.identificationNumber=identificationNumber.text.toString().toLongOrNull()
         user.bloodGroup=bloodGroup.text.trim().toString()
         address.city= city.text.trim().toString()
         address.district=district.text.trim().toString()
         address.quarter=quarter.text.trim().toString()
         address.street=street.text.trim().toString()
-        address.buildingNumber=buildingNumber.text.toString().toInt()
-        address.apartmentNumber=apartmentNumber.text.toString().toInt()
-        communication.phoneNumber=phoneNumber.text.toString().toLong()
+        address.buildingNumber=buildingNumber.text.toString().toIntOrNull()
+        address.apartmentNumber=apartmentNumber.text.toString().toIntOrNull()
+        communication.phoneNumber= phoneNumber.text.toString().toLongOrNull()
         user.birthDate=birthDate.text.toString()
         communication.email=email.text.trim().toString()
+        communication.userIdNo=identificationNumber.text.toString().toLongOrNull()
+        address.userIdNp=identificationNumber.text.toString().toLongOrNull()
+
+        user.communication=communication
+        user.address=address
+        val diseaseInformation=ArrayList<DiseaseInformation>()
+        val bloodDonations= ArrayList<BloodDonations>()
+        user.diseaseInformation=diseaseInformation
+        user.bloodDonations=bloodDonations
+
 /*
         val address=Address(0,city,district,quarter,street,buildingNumber,apartmentNumber
             ,IdentificationNumber)

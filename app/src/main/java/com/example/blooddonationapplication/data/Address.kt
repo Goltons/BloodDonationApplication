@@ -3,14 +3,13 @@ package com.example.blooddonationapplication.data
 //@Entity
 data class Address(
     //@PrimaryKey(autoGenerate = true)
-    var addressId:Int?,
-    var city:String?,
-    var district:String?,
-    var quarter:String?,
-    var street:String?,
-    var buildingNumber:Int?,
-    var apartmentNumber:Int?,
-    var userIdNp: Long?
+    var addressId:Int?=null,
+    var city:String?=null,
+    var district:String?=null,
+    var quarter:String?=null,
+    var street:String?=null,
+    var buildingNumber:Int?=null,
+    var apartmentNumber:Int?=null,
+    var userIdNp: Long?=null
 ):BaseDataClass() {
-    constructor() : this(null,null,null,null,null,null,null,null)
 }

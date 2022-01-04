@@ -3,10 +3,9 @@ package com.example.blooddonationapplication.data
 //@Entity
 data class Communication(
   //  @PrimaryKey(autoGenerate = true)
-  var communicationId:Int,
-  var email:String,
-  var phoneNumber:Long,
-  var userIdNo: Long
+  var communicationId:Int?=null,
+  var email:String?=null,
+  var phoneNumber:Long?=null,
+  var userIdNo: Long?=null
 ) :BaseDataClass() {
-  constructor():this(0,"",0,0)
 }
