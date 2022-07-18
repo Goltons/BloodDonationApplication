@@ -34,18 +34,11 @@
             android:text="Hasta İsmi"
             android:padding="15dp"
             />
-
-        <NumberPicker
-            android:id="@+id/count"
-            android:layout_width="388dp"
-            android:layout_height="67dp"
-            android:layout_below="@id/patientName"/>
-
         <Button
             android:id="@+id/applyButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/count"
+            android:layout_below="@id/patientName"
             android:onClick="btnApplyDonor"
             android:text="Kan Bağışını Yap" />
     </RelativeLayout>

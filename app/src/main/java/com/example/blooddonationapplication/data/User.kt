@@ -1,5 +1,6 @@
 package com.example.blooddonationapplication.data
 
+import com.google.firebase.firestore.GeoPoint
 import javax.annotation.Nullable
 
 @Nullable
@@ -16,9 +17,11 @@ data class User(
     var address:Address?,
     var communication:Communication?,
     var diseaseInformation: ArrayList<DiseaseInformation>?,
-    var bloodDonations: ArrayList<BloodDonations>?
+    var bloodDonations: ArrayList<BloodDonations>?,
+    var deviceToken:String?,
+    var location:GeoPoint?
     ):BaseDataClass() {
     constructor() : this(null,null,null,null,null,null,null
-    ,null,null,null,null) {}
+    ,null,null,null,null,null,null) {}
 }
 

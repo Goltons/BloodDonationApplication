@@ -1,5 +1,6 @@
 package com.example.blooddonationapplication.DataAccess
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -27,17 +28,16 @@ class ApplyHistoryAdapter(options: FirestoreRecyclerOptions<Donor>) :
         var textViewHospitalName: TextView? =null
         var textViewDesc:TextView?=null
         var textViewBloodGroup:TextView?=null
-        var textViewCount:TextView?=null
         var textViewDate:TextView?=null
         constructor(itemView:View) : super(itemView) {
             textViewHospitalName = itemView.findViewById(R.id.text_view_hospitalNameHistory)
             textViewDesc = itemView.findViewById(R.id.text_view_descriptionHistory)
             textViewBloodGroup = itemView.findViewById(R.id.text_view_bloodGroupHistory)
-            textViewCount = itemView.findViewById(R.id.textView_countHistory)
             textViewDate = itemView.findViewById(R.id.text_view_dateHistory)
         }
     }
 
+    @SuppressLint("SetTextI18n")
     override fun onBindViewHolder(
         holder: ApplyHistoryAdapter.DonorHolder,
         position: Int,
@@ -46,7 +46,6 @@ class ApplyHistoryAdapter(options: FirestoreRecyclerOptions<Donor>) :
         holder.textViewHospitalName?.text = model.hospitalName
         holder.textViewDesc?.text = "123"
         holder.textViewBloodGroup?.text=model.bloodGroup
-        holder.textViewCount?.text=model.count.toString()
         holder.textViewDate?.text=model.createdAt.toString()
     }
 }

@@ -13,11 +13,6 @@ import com.google.firebase.firestore.DocumentSnapshot
 import com.google.firebase.firestore.FirebaseFirestore
 
 
-
-
-
-
-
 class ApplymentsActivity : AppCompatActivity()  {
     private val db=FirebaseFirestore.getInstance()
     private val collectionRef=db.collection("apply")
@@ -30,11 +25,10 @@ class ApplymentsActivity : AppCompatActivity()  {
     }
     private fun setRecyclerView() {
         val bloodGroup=getSharedPreferences("sharedPrefs", MODE_PRIVATE).getString("bloodGroup","")
-        val query=collectionRef.whereEqualTo("bloodGroup",bloodGroup).whereGreaterThan("countOfNeeds",1)
-            .whereEqualTo("complete",false)
+        val query=collectionRef.whereEqualTo("complete",false).whereEqualTo("bloodGroup",bloodGroup)
         val options:FirestoreRecyclerOptions<BloodDonationApplyment> = FirestoreRecyclerOptions.Builder<BloodDonationApplyment>()
             .setQuery(query,BloodDonationApplyment::class.java).build()
-        adapter= ApplyAdapter(options)
+        adapter= bloodGroup?.let { ApplyAdapter(options, it) }
         val recyclerView:RecyclerView=findViewById(R.id.rv_test)
         recyclerView.setHasFixedSize(true)
         recyclerView.layoutManager= LinearLayoutManager(this)
@@ -60,7 +54,6 @@ class ApplymentsActivity : AppCompatActivity()  {
         super.onStart()
         adapter?.startListening()
     }
-
     override fun onStop() {
         super.onStop()
         adapter?.stopListening()

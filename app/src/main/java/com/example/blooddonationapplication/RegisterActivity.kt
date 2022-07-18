@@ -61,6 +61,9 @@ class RegisterActivity : AppCompatActivity() {
         user.userPassword=password.text.trim().toString()
         user.identificationNumber=identificationNumber.text.toString().toLongOrNull()
         user.bloodGroup=bloodGroup.text.trim().toString()
+        address.addressId=0
+        user.userId=0
+        communication.communicationId=0
         address.city= city.text.trim().toString()
         address.district=district.text.trim().toString()
         address.quarter=quarter.text.trim().toString()

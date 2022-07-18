@@ -7,46 +7,27 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".HomepageActivity"
-    android:padding="25dp">
+    android:padding="25dp"
+    android:paddingStart="60dp"
+    tools:context=".HomepageActivity">
 
   <Button
       android:id="@+id/btnApplys"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
-      android:onClick="getApplys"
       android:drawableLeft="@drawable/ic_baseline_local_hospital_24"
-      android:text="Aktif İhticaçlar"
+      android:onClick="getApplys"
+      android:text="Aktif İhtiyaçlar"
       tools:ignore="MissingConstraints"
       tools:layout_editor_absoluteX="32dp"
       tools:layout_editor_absoluteY="156dp" />
 
-  <Button
-      android:id="@+id/btnLogout"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:onClick="btnLogout"
-      android:drawableLeft="@drawable/ic_baseline_exit_to_app_24"
-      android:text="çıkış yap"
-      tools:ignore="MissingConstraints"
-      tools:layout_editor_absoluteX="32dp"
-      tools:layout_editor_absoluteY="80dp" />
-
-  <Button
-      android:id="@+id/btnapplyHommepage"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:onClick="addApplys"
-      android:text="Başvuru yap"
-      android:drawableLeft="@drawable/ic_baseline_how_to_reg_24"
-      tools:ignore="MissingConstraints"
-      tools:layout_editor_absoluteX="155dp"
-      tools:layout_editor_absoluteY="280dp" />
 
   <Button
       android:id="@+id/btnhistory"
-      android:layout_width="wrap_content"
+      android:layout_width="204dp"
       android:layout_height="wrap_content"
+      android:baselineAligned="false"
       android:drawableLeft="@drawable/ic_baseline_dialpad_24"
       android:onClick="applyHistory"
       android:text="Kan Bağışı geçmişi"
@@ -54,5 +35,14 @@
       tools:layout_editor_absoluteX="174dp"
       tools:layout_editor_absoluteY="211dp" />
 
-
+  <Button
+      android:id="@+id/btnLogout"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:drawableLeft="@drawable/ic_baseline_exit_to_app_24"
+      android:onClick="btnLogout"
+      android:text="çıkış yap"
+      app:backgroundTint="#D50B0B"
+      tools:layout_editor_absoluteX="32dp"
+      tools:layout_editor_absoluteY="80dp" />
 </LinearLayout>

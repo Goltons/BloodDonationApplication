@@ -12,7 +12,7 @@ import com.google.firebase.firestore.FirebaseFirestore
 
 class ApplymentHistoryActivity : AppCompatActivity() {
     private val db= FirebaseFirestore.getInstance()
-    private val collectionRef=db.collectionGroup("donors")
+    private val collectionRef=db.collection("donors")
     private var adapter:ApplyHistoryAdapter?=null
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -24,7 +24,9 @@ class ApplymentHistoryActivity : AppCompatActivity() {
     }
     private fun setRecyclerView() {
          val sp:SharedPreferences=getSharedPreferences("sharedPrefs", MODE_PRIVATE)
-        val query= collectionRef.whereEqualTo("donorIdNo",sp.getLong("idNo",0))
+        val query= collectionRef
+            .whereEqualTo("donorIdNo",sp.getLong("idNo",0))
+            .whereEqualTo("complete",true)
         val options: FirestoreRecyclerOptions<Donor> = FirestoreRecyclerOptions.Builder<Donor>()
             .setQuery(query, Donor::class.java).build()
         adapter= ApplyHistoryAdapter(options)
